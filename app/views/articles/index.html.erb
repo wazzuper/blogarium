@@ -5,4 +5,5 @@
   <p><%= article.text %></p>
   <p><%= link_to 'Post details', article_path(article) %></p>
   <p><%= link_to 'Edit post', edit_article_path(article) %></p>
+  <p><%= link_to 'Delete post', article_path(article), method: :delete %></p>
 <% end %>
