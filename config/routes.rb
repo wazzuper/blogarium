@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  get 'terms', to: 'terms#index'
-  get 'about', to: 'about#index'
+  get 'terms', to: 'pages#terms'
+  get 'about', to: 'pages#about'
 
   resource :contacts, only: [:new, :create], path_names: { new: '' }
   resources :articles
