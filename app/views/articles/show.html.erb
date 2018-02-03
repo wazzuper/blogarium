@@ -2,3 +2,21 @@
 
 <h4><%= @article.title %></h4>
 <p><%= @article.text %></p>
+
+
+<h4>Add new comment</h4>
+<%= form_for [@article, @article.comments.build] do |f| %>
+  <p><%= f.label :author, 'Your name/nickname' %></p>
+  <p><%= f.text_field :author %></p>
+
+  <p><%= f.label :body, 'Your comment' %></p>
+  <p><%= f.text_area :body %></p>
+
+  <p><%= f.submit 'Create comment' %></p>
+<% end %>
+
+<h4>Comments:</h4>
+<% @article.comments.each do |comment| %>
+  <p><%= comment.author %></p>
+  <p><%= comment.body %></p>
+<% end %>
