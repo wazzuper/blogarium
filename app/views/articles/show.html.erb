@@ -2,7 +2,7 @@
 
 <h4><%= @article.title %></h4>
 <p><%= @article.text %></p>
-
+<p><%= link_to 'Back to posts', articles_path %></p>
 
 <h4>Add new comment</h4>
 <%= form_for [@article, @article.comments.build] do |f| %>
