@@ -6,13 +6,16 @@
 
 <h4>Add new comment</h4>
 <%= form_for [@article, @article.comments.build] do |f| %>
-  <p><%= f.label :author, 'Your name/nickname' %></p>
-  <p><%= f.text_field :author %></p>
+  <% if user_signed_in? %>
+    <%= f.hidden_field :author, value: current_user.username %>
 
-  <p><%= f.label :body, 'Your comment' %></p>
-  <p><%= f.text_area :body %></p>
+    <p><%= f.label :body, 'Your comment' %></p>
+    <p><%= f.text_area :body %></p>
 
-  <p><%= f.submit 'Send comment' %></p>
+    <p><%= f.submit 'Send comment' %></p>
+  <% else %>
+    <p>Your must sign in to leave a comments</p>
+  <% end %>
 <% end %>
 
 <h4>Comments:</h4>
