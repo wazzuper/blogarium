@@ -11,12 +11,12 @@
   <body>
 
     <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded-bottom">
         <a class="navbar-brand" href="/">Blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
+        
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
@@ -29,11 +29,7 @@
               <a class="nav-link" href="/terms">Terms</a>
             </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <p class="notice"><%= notice %></p>
-              <p class="alert"><%= alert %></p>
-            </li>
+          <ul class="nav justify-content-end">
             <li>
               <% if user_signed_in? %>
                 <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-lg btn-info' %>
@@ -46,6 +42,9 @@
       </nav>      
             
       <%= yield %>
+
+      <p class="notice text-info"><%= notice %></p>
+      <p class="alert text-info"><%= alert %></p>
     </div>
     
   </body>
