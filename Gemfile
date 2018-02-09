@@ -40,6 +40,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'factory_bot_rails'
   gem 'selenium-webdriver'
 end
 
