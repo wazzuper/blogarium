@@ -25,6 +25,8 @@
 
 <h4>Comments:</h4>
 <% @article.comments.each do |comment| %>
-  <p><%= comment.author %></p>
-  <p><%= comment.body %></p>
+  <div class="jumbotron">
+    <p><%= comment.author %></p>
+    <p><%= comment.body %></p>
+  </div>
 <% end %>

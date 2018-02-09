@@ -1,9 +1,23 @@
-<h2>All posts</h2>
-
 <% @articles.each do |article| %>
-  <h4><%= article.title %></h4>
-  <p><%= article.text %></p>
-  <p><%= link_to 'Post details', article_path(article) %></p>
-  <p><%= link_to 'Edit post', edit_article_path(article) %></p>
-  <p><%= link_to 'Delete post', article, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <div class="jumbotron">
+    <h4><%= article.title %></h4>
+    <p><%= article.text %></p>
+
+    <table>
+      <body>
+        <tr>
+          <td><%= link_to 'Post details', article_path(article), class: 'btn btn-info' %></td>
+          <% if user_signed_in? && current_user.id == article.user_id %>
+            <td><%= link_to 'Edit post', edit_article_path(article), class: 'btn btn-info' %></td>
+            <td><%= link_to 'Delete post', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+          <% end %>
+        </tr>
+      </body>
+    </table>
+
+    <hr>  
+
+    <p>Created at <%= article.created_at %></p>
+    
+  </div>
 <% end %>
