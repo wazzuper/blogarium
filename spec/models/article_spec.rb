@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Article do
   describe 'associations' do
-    it { should have_many :comments }
+    it { should have_many(:comments).dependent(:destroy) }
     it { should belong_to :user }
   end
 
