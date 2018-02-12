@@ -2,7 +2,7 @@
 
 <h4><%= @article.title %></h4>
 <p><%= @article.text %></p>
-<p><%= link_to 'Back to posts', articles_path %></p>
+<p><%= link_to t('articles.back'), articles_path %></p>
 
 <h4>Add new comment</h4>
 
@@ -10,10 +10,10 @@
 
     <%= form_for [@article, @article.comments.build] do |f| %>
 
-      <p><%= f.label :body, 'Your comment' %></p>
+      <p><%= f.label :body, t('comments.comment') %></p>
       <p><%= f.text_area :body %></p>
 
-      <p><%= f.submit 'Send comment' %></p>
+      <p><%= f.submit t('comments.send') %></p>
 
     <% end %>
 

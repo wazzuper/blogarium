@@ -13,7 +13,7 @@ feature 'Contact Creation' do
 
     fill_in(:contact_email, with: 'mail@mail.com')
     fill_in(:contact_message, with: 'message body')
-    click_button('Send message')
+    click_button(I18n.t 'contacts.send')
 
     expect(page).to have_content('Thanks!')
   end

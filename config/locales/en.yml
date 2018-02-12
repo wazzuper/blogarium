@@ -32,3 +32,28 @@
 en:
   contacts:
     contact_us: 'Contact us'
+    send: 'Send message'
+
+  articles:
+    details: 'Article details'
+    new: 'Create article'
+    edit: 'Edit article'
+    update: 'Update article'
+    delete: 'Delete article'
+    confirm: 'Are you sure?'
+    back: 'Back to articles'
+
+  comments:
+    comment: 'Your comment'
+    send: 'Send comment'
+    
+  layouts:
+    title: 'Blogarium'
+    articles: 'All articles'
+    new: 'New article'
+    about: 'About'
+    terms: 'Terms'
+    contacts: 'Contacts'
+    sign_in: 'Sign in'
+    sign_out: 'Sign out'
+    
